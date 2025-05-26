@@ -1,6 +1,7 @@
 package dev.mzcy.bootstrap;
 
 import dev.mzcy.bootstrap.console.JLineConsole;
+import dev.mzcy.data.mongo.manager.DatabaseManager;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -19,6 +20,8 @@ public class IdleEmpireServer {
     JLineConsole console;
     Logger logger = LoggerFactory.getLogger(IdleEmpireServer.class);
 
+    DatabaseManager databaseManager;
+
     public IdleEmpireServer() {
         AnsiConsole.systemInstall();
         long startTime = System.nanoTime();
@@ -34,12 +37,16 @@ public class IdleEmpireServer {
         String address = "127.0.0.1";
         int port = 25565;
 
+        MojangAuth.init();
+
+        logger.info("Connecting to MongoDB...");
+        databaseManager = new DatabaseManager("mongodb://admin:esCeQHQ5xmOq@87.106.178.7:27017/IdleEmpire?authSource=admin&retryWrites=true&w=majority&connectTimeoutMS=10000&serverSelectionTimeoutMS=10000");
+
         minecraftServer.start(address, port);
         logger.info("Starting server @ {}:{}", address, port);
 
         setDefaultSystemProperties();
 
-        MojangAuth.init();
         logger.info("Listening on {}:{}", address, port);
 
         console.start();

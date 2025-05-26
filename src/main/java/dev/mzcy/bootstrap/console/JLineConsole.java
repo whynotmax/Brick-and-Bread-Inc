@@ -15,6 +15,8 @@ import org.jline.reader.*;
 import org.jline.reader.LineReader.Option;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -22,11 +24,11 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@Slf4j
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public final class JLineConsole {
 
     LineReader lineReader;
+    Logger log = LoggerFactory.getLogger(JLineConsole.class);
 
     public JLineConsole() {
         String consoleName = "IdleEmpireServer-console";
