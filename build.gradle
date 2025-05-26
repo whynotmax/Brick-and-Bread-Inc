@@ -1,0 +1,68 @@
+plugins {
+    id 'java-library'
+    id 'application'
+}
+
+group = 'dev.mzcy'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'dev.max.IdleEmpireMain'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.17'
+    implementation 'ch.qos.logback:logback-classic:1.5.18'
+
+    implementation 'org.fusesource.jansi:jansi:2.4.1'
+    implementation 'org.jline:jline:3.28.0'
+
+    // Kyori
+    implementation 'net.kyori:adventure-text-minimessage:4.21.0'
+
+    // JSON handling
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.19.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.19.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.19.0'
+
+    // MongoDB Datenbank
+    implementation 'org.mongodb:mongodb-driver-sync:5.5.0'
+    implementation 'eu.koboo:en2do:3.2.0'
+
+    // Lombok (optional, falls du Getter/Builder reduzieren willst)
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+
+    // JUnit für Tests
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.2'
+
+    // Minestom-API
+    implementation 'net.minestom:minestom-snapshots:7320437640'
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': application.mainClass.get()
+        )
+    }
+}
