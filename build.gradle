@@ -66,6 +66,10 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
+tasks.register('cleanLogs', Delete) {
+    delete fileTree(dir: 'logs', include: '**/*')
+}
+
 jar {
     manifest {
         attributes(
