@@ -31,6 +31,9 @@ dependencies {
     // Kyori
     implementation 'net.kyori:adventure-text-minimessage:4.21.0'
 
+    // Java ByteCode Manipulation
+    implementation 'org.reflections:reflections:0.10.2'
+
     // JSON handling
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.19.0'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.19.0'
