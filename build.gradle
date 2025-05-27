@@ -55,7 +55,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.12.2'
 
     // Minestom-API
-    implementation 'net.minestom:minestom-snapshots:7320437640'
+    implementation 'net.minestom:minestom-snapshots:ebaa2bbf64'
 }
 
 tasks.withType(Test).configureEach {
