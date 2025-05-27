@@ -1,8 +1,8 @@
 package dev.mzcy.bootstrap;
 
 import dev.mzcy.bootstrap.console.JLineConsole;
-import dev.mzcy.data.mongo.manager.DatabaseManager;
-import dev.mzcy.data.mongo.profiles.IdlePlayerProfileService;
+import dev.mzcy.infrastructure.mongo.manager.DatabaseManager;
+import dev.mzcy.infrastructure.mongo.profiles.IdlePlayerProfileService;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -11,8 +11,6 @@ import net.minestom.server.extras.MojangAuth;
 import org.fusesource.jansi.AnsiConsole;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.nio.file.Paths;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
