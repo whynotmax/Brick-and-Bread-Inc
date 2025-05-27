@@ -48,7 +48,7 @@ public class IdleEmpireServer {
         logger.info("Connected to MongoDB!");
         logger.info("Loading profile services...");
 
-        idlePlayerProfileService = new IdlePlayerProfileService(this.databaseManager);
+        idlePlayerProfileService = new IdlePlayerProfileService();
 
         logger.info("Profile services loaded!");
 
