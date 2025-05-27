@@ -43,7 +43,7 @@ public class IdleEmpireServer {
         MojangAuth.init();
 
         logger.info("Connecting to MongoDB...");
-        databaseManager = new DatabaseManager("mongodb://admin:esCeQHQ5xmOq@87.106.178.7:27017/IdleEmpire?authSource=admin&retryWrites=true&w=majority&connectTimeoutMS=10000&serverSelectionTimeoutMS=10000");
+        databaseManager = new DatabaseManager(System.getenv("IDLEEMPIRE_MONGO_CONNECTION_STRING"));
 
         logger.info("Connected to MongoDB!");
         logger.info("Loading profile services...");
