@@ -1,6 +1,7 @@
 package dev.mzcy.bootstrap.console;
 
 
+import dev.mzcy.bootstrap.IdleEmpireServer;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
@@ -28,7 +29,7 @@ import java.util.Set;
 public final class JLineConsole {
 
     LineReader lineReader;
-    Logger log = LoggerFactory.getLogger(JLineConsole.class);
+    Logger log = IdleEmpireServer.getInstance().getLogger();
 
     public JLineConsole() {
         String consoleName = "IdleEmpireServer-console";
@@ -98,7 +99,7 @@ public final class JLineConsole {
             }
         });
         consoleThread.setDaemon(true);
-        consoleThread.setName("ConsoleCommandInputThread");
+        consoleThread.setName("ConsoleCommandInputsThread");
         consoleThread.start();
     }
 }

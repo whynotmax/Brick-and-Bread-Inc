@@ -13,7 +13,7 @@ java {
 }
 
 application {
-    mainClass = 'dev.max.IdleEmpireMain'
+    mainClass = 'dev.mzcy.bootstrap.LauncherMain'
 }
 
 repositories {
@@ -68,6 +68,16 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.register('cleanLogs', Delete) {
     delete fileTree(dir: 'logs', include: '**/*')
+}
+
+tasks.register('cleanLibraries', Delete) {
+    delete fileTree(dir: 'libraries', include: '**/*')
+}
+
+tasks.register('cleanAll', Delete) {
+    delete fileTree(dir: 'logs', include: '**/*')
+    delete fileTree(dir: 'libraries', include: '**/*')
+    delete fileTree(dir: 'build', include: '**/*')
 }
 
 jar {

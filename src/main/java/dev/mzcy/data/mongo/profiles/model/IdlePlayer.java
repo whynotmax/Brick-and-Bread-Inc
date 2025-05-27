@@ -1,4 +1,4 @@
-package dev.mzcy.data.mongo.model;
+package dev.mzcy.data.mongo.profiles.model;
 
 import eu.koboo.en2do.repository.entity.Id;
 import lombok.*;
