@@ -1,5 +1,5 @@
 # Brick-and-Bread-Inc
-🧠 Wirtschaftliches Kolonie-Idle-Game, mit Kapitalismus-Flair. Siedler trifft auf Wall Street – in Minecraft, aber mit Automation und AFK-Fortschritt.
+🧠 Economic colony idle game with a capitalist flair. Settlers meets Wall Street - in Minecraft, but with automation and AFK progress.
 
 ## File Structure
 Click [here](FILE_TREE.md) to view the file structure of this repository or browse the [GitHub repository](https://github.com/whynotmax/Brick-and-Bread-Inc).
